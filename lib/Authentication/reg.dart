@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medos/Auth_Clinck/reg_clinic.dart';
 import 'package:medos/Auth_Doctors/reg_doctor.dart';
+import 'package:medos/Auth_Pharmacy/reg_pharmacy.dart';
 
 class Reg extends StatefulWidget {
   const Reg({super.key});
@@ -75,6 +76,7 @@ class _RegState extends State<Reg> {
               constraints: BoxConstraints(minHeight: 60.0),
               child: ElevatedButton.icon(
                 onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => RegPharmacy()));
                 },
                 label: Text(
                   "Dorixona akkountini ochish",

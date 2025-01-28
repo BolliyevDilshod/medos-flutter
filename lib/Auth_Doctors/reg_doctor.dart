@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:medos/Auth_Doctors/reg_doctor_two.dart';
 
 class RegDoctor extends StatefulWidget {
   const RegDoctor({super.key});
@@ -8,9 +11,7 @@ class RegDoctor extends StatefulWidget {
 }
 
 class _RegDoctorState extends State<RegDoctor> {
-
   TextEditingController _editingController = TextEditingController();
-
 
   @override
   Widget build(BuildContext context) {
@@ -268,7 +269,9 @@ class _RegDoctorState extends State<RegDoctor> {
                       ),
                     ),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) =>RegDoctorTwo() ),);
+                      },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.teal,
                           shape: RoundedRectangleBorder(
@@ -304,5 +307,4 @@ class _RegDoctorState extends State<RegDoctor> {
       });
     }
   }
-
 }
