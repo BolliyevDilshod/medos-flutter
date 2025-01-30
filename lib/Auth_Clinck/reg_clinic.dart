@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medos/Authentication/reg.dart';
 import 'package:medos/Auth_Clinck//reg_clinic_two_page.dart';
+import 'package:multiselect/multiselect.dart';
 
 class Reg_Clinic extends StatefulWidget {
   const Reg_Clinic({super.key});
@@ -253,6 +254,7 @@ class _Reg_ClinicState extends State<Reg_Clinic> {
                 ),
               ),
             ),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Container(

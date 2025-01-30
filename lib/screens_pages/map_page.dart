@@ -42,7 +42,7 @@ class _MapPageState extends State<MapPage> {
           style: TextStyle(fontSize: 16.0),
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(50.0),
+          borderRadius: BorderRadius.circular(20.0),
         ),
       ),
       appBar: AppBar(

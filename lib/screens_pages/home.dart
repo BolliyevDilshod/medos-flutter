@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:medos/screens_pages/menu_drawer.dart';
 import 'package:medos/screens_pages/menu_reg.dart';
+import 'package:medos/screens_pages/save_page.dart';
+import 'package:medos/two_pages/info_project.dart';
+import '../two_pages/info_clinic.dart';
 import 'map_page.dart';
 import 'nav_bar.dart';
 
@@ -26,7 +29,7 @@ class HomePage extends StatelessWidget {
           style: TextStyle(fontSize: 16.0),
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(50.0),
+          borderRadius: BorderRadius.circular(20.0),
         ),
       ),
       appBar: AppBar(
@@ -50,9 +53,13 @@ class HomePage extends StatelessWidget {
       bottomNavigationBar: NavigationBar(
         destinations: [
           NavigationDestination(
-              icon: Icon(Icons.person_outline_rounded), label: "Shifokorlar",),
+            icon: Icon(Icons.person_outline_rounded),
+            label: "Shifokorlar",
+          ),
           NavigationDestination(
-            icon: Icon(Icons.location_on_outlined), label: "Shifoxonalar",),
+            icon: Icon(Icons.location_on_outlined),
+            label: "Shifoxonalar",
+          ),
           NavigationDestination(
               icon: Icon(Icons.home_mini_sharp), label: "Dorixonalar"),
           NavigationDestination(
@@ -81,7 +88,8 @@ class HomePage extends StatelessWidget {
                   hintStyle: WidgetStateProperty.all(
                     TextStyle(color: Colors.black26),
                   ),
-                  textStyle: WidgetStateProperty.all(TextStyle(color: Colors.black87)),
+                  textStyle:
+                      WidgetStateProperty.all(TextStyle(color: Colors.black87)),
                   backgroundColor: WidgetStateProperty.all(Colors.grey[300]),
                   shadowColor: WidgetStateProperty.all(Colors.black87),
                   elevation: WidgetStateProperty.all(2.0),
@@ -154,13 +162,25 @@ class HomePage extends StatelessWidget {
                             SizedBox(
                               height: 12.0,
                             ),
-                            ClipRRect(
-                              child: Image.asset(
-                                "images/akfamedline.jpg",
-                                fit: BoxFit.contain,
-                                width: 325.0,
-                              ),
-                              borderRadius: BorderRadius.circular(15.0),
+                            Stack(
+                              children: [
+                                ClipRRect(
+                                  child: Image.asset(
+                                    "images/akfamedline.jpg",
+                                    fit: BoxFit.contain,
+                                    width: 325.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                                Positioned(
+                                  child: Icon(
+                                    Icons.favorite_border_outlined,
+                                    size: 30.0,
+                                  ),
+                                  bottom: 210.0,
+                                  right: 20.0,
+                                ),
+                              ],
                             ),
                             SizedBox(height: 5.0),
                             Padding(
@@ -333,8 +353,59 @@ class HomePage extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            SizedBox(
-                              height: 16.0,
+                            Row(
+                              children: [
+                                GestureDetector(
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 20.0),
+                                    child: Text(
+                                      "Batafsil",
+                                      style: TextStyle(
+                                          color: Colors.teal,
+                                          fontSize: 17.0,
+                                          fontWeight: FontWeight.w500,
+                                          decoration: TextDecoration.underline,
+                                          decorationColor: Colors.teal),
+                                    ),
+                                  ),
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => InfoClinic(),
+                                      ),
+                                    );
+                                  },
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 20.0),
+                                  child: ElevatedButton.icon(
+                                    onPressed: () {},
+                                    label: Text(
+                                      "Navigator",
+                                      style: TextStyle(color: Colors.teal),
+                                    ),
+                                    icon: Icon(
+                                      Icons.near_me_outlined,
+                                      color: Colors.teal,
+                                    ),
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: Colors.grey[100],
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(15.0),
+                                        side: BorderSide(
+                                          width: 1,
+                                          color: Colors.teal,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             ),
                           ],
                         );
