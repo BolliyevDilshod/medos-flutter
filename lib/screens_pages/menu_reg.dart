@@ -78,7 +78,7 @@ class Menu_Reg extends StatelessWidget {
             child: Row(
               children: [
                 Icon(
-                  Icons.heart_broken_outlined,
+                  Icons.favorite_border_outlined,
                   color: Colors.black87,
                 ),
                 SizedBox(

@@ -72,7 +72,7 @@ class MenuDrawer extends StatelessWidget {
             Row(
               children: [
                 Icon(
-                  Icons.heart_broken_outlined,
+                  Icons.favorite_border_outlined,
                   color: Colors.black87,
                 ),
                 SizedBox(
