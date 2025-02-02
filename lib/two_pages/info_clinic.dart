@@ -20,6 +20,15 @@ class _InfoClinicState extends State<InfoClinic> {
     zoom: 8.0,
   );
 
+  List<String> specialty = [
+    "Androlog",
+    "Urolog",
+    "Lor",
+    "Stomatolog",
+    "UZI",
+    "Labarant",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -186,207 +195,7 @@ class _InfoClinicState extends State<InfoClinic> {
                     width: 360.0,
                     height: 500.0,
                     child: TabBarView(children: [
-                      SingleChildScrollView(
-                        child: Container(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                height: 10.0,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 15.0),
-                                child: Text(
-                                  "Shifoxona haqida",
-                                  style: TextStyle(
-                                      color: Colors.black87,
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 15.0),
-                                child: Text(
-                                  "Diagnostika va davolash xizmatlarining to‘liq to‘plamiga "
-                                  "ega bo‘lgan Akfa Medline ko‘p tarmoqli tibbiy "
-                                  "markazi yordamida siz tez va oson sifatli tibbiy yordam "
-                                  "olishingiz mumkin. Yuqori malakali xodimlar va eng sifatli "
-                                  "uskunalarga ega klinika sog‘ligingiz uchun",
-                                  style: TextStyle(
-                                    color: Colors.black87,
-                                    fontSize: 16.0,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 20.0,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 15.0),
-                                child: Container(
-                                  width: 340.0,
-                                  height: 150.0,
-                                  child: GoogleMap(
-                                      initialCameraPosition: _cameraPosition,
-                                      onMapCreated:
-                                          (GoogleMapController controller) {
-                                        _completer.complete(controller);
-                                      }),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 20.0,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 15.0),
-                                child: Text(
-                                  "Manzil",
-                                  style: TextStyle(color: Colors.grey[500]),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 15.0),
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      child: Text(
-                                        "Shayxontohur tumani, Kichik Xalqa yo‘li, 9-uy  Beruniy metrosi",
-                                        style: TextStyle(color: Colors.black87),
-                                      ),
-                                    ),
-                                    GestureDetector(
-                                      onTap: () {},
-                                      child: CircleAvatar(
-                                        backgroundColor: Colors.grey[200],
-                                        child: Icon(
-                                          Icons.near_me_rounded,
-                                          color: Colors.teal,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Divider(
-                                thickness: 1,
-                                color: Colors.grey[200],
-                                indent: 15.0,
-                                endIndent: 15.0,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 15.0),
-                                child: Text(
-                                  "Ish vaqti",
-                                  style: TextStyle(color: Colors.grey[500]),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 15.0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "09:00 dan 18:00 gacha",
-                                      style: TextStyle(
-                                          color: Colors.black87, fontSize: 18),
-                                    ),
-                                    Icon(
-                                      Icons.arrow_forward_ios_outlined,
-                                      color: Colors.grey,
-                                      size: 20,
-                                    )
-                                  ],
-                                ),
-                              ),
-                              Divider(
-                                thickness: 1,
-                                color: Colors.grey[200],
-                                indent: 15.0,
-                                endIndent: 15.0,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 15.0),
-                                child: Text(
-                                  "Bog'lanish",
-                                  style: TextStyle(color: Colors.grey[500]),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 15.0),
-                                child: Row(
-                                  // crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "+998 94 123 45 67",
-                                      style: TextStyle(
-                                          color: Colors.black87, fontSize: 18),
-                                    ),
-                                    CircleAvatar(
-                                      backgroundColor: Colors.grey[200],
-                                        child: Icon(
-                                      Icons.call,
-                                      color: Colors.teal,
-                                      size: 20,
-                                    ))
-                                  ],
-                                ),
-                              ),
-                              Divider(
-                                thickness: 1,
-                                color: Colors.grey[200],
-                                indent: 15.0,
-                                endIndent: 15.0,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 15.0),
-                                child: Text(
-                                  "Web sayt",
-                                  style: TextStyle(color: Colors.grey[500]),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 15.0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "medos.uz",
-                                      style: TextStyle(
-                                          color: Colors.black87, fontSize: 18),
-                                    ),
-                                    Icon(
-                                      Icons.arrow_forward_ios_outlined,
-                                      color: Colors.grey,
-                                      size: 20,
-                                    )
-                                  ],
-                                ),
-                              ),
-                              Divider(
-                                thickness: 3,
-                                color: Colors.grey[200],
-
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                      SingleChildScrollView(child: common()),
                       Container(
                         color: Colors.red,
                       ),
@@ -406,6 +215,217 @@ class _InfoClinicState extends State<InfoClinic> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget common() {
+    return Container(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            height: 10.0,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: Text(
+              "Shifoxona haqida",
+              style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w500),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: Text(
+              "Diagnostika va davolash xizmatlarining to‘liq to‘plamiga "
+              "ega bo‘lgan Akfa Medline ko‘p tarmoqli tibbiy "
+              "markazi yordamida siz tez va oson sifatli tibbiy yordam "
+              "olishingiz mumkin. Yuqori malakali xodimlar va eng sifatli "
+              "uskunalarga ega klinika sog‘ligingiz uchun",
+              style: TextStyle(
+                color: Colors.black87,
+                fontSize: 16.0,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 20.0,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: Container(
+              width: 340.0,
+              height: 150.0,
+              child: GoogleMap(
+                  initialCameraPosition: _cameraPosition,
+                  onMapCreated: (GoogleMapController controller) {
+                    _completer.complete(controller);
+                  }),
+            ),
+          ),
+          SizedBox(
+            height: 20.0,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: Text(
+              "Manzil",
+              style: TextStyle(color: Colors.grey[500]),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    "Shayxontohur tumani, Kichik Xalqa yo‘li, 9-uy  Beruniy metrosi",
+                    style: TextStyle(color: Colors.black87),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: CircleAvatar(
+                    backgroundColor: Colors.grey[200],
+                    child: Icon(
+                      Icons.near_me_rounded,
+                      color: Colors.teal,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Divider(
+            thickness: 1,
+            color: Colors.grey[200],
+            indent: 15.0,
+            endIndent: 15.0,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: Text(
+              "Ish vaqti",
+              style: TextStyle(color: Colors.grey[500]),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "09:00 dan 18:00 gacha",
+                  style: TextStyle(color: Colors.black87, fontSize: 18),
+                ),
+                Icon(
+                  Icons.arrow_forward_ios_outlined,
+                  color: Colors.grey,
+                  size: 20,
+                )
+              ],
+            ),
+          ),
+          Divider(
+            thickness: 1,
+            color: Colors.grey[200],
+            indent: 15.0,
+            endIndent: 15.0,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: Text(
+              "Bog'lanish",
+              style: TextStyle(color: Colors.grey[500]),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: Row(
+              // crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "+998 94 123 45 67",
+                  style: TextStyle(color: Colors.black87, fontSize: 18),
+                ),
+                CircleAvatar(
+                    backgroundColor: Colors.grey[200],
+                    child: Icon(
+                      Icons.call,
+                      color: Colors.teal,
+                      size: 20,
+                    ))
+              ],
+            ),
+          ),
+          Divider(
+            thickness: 1,
+            color: Colors.grey[200],
+            indent: 15.0,
+            endIndent: 15.0,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: Text(
+              "Web sayt",
+              style: TextStyle(color: Colors.grey[500]),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "medos.uz",
+                  style: TextStyle(color: Colors.black87, fontSize: 18),
+                ),
+                Icon(
+                  Icons.arrow_forward_ios_outlined,
+                  color: Colors.grey,
+                  size: 20,
+                )
+              ],
+            ),
+          ),
+          Divider(
+            thickness: 3,
+            color: Colors.grey[200],
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: Text(
+              "Doktorlar ixtisosligi",
+              style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w500),
+            ),
+          ),
+          Container(
+            height: 200.0,
+            child: GridView.builder(
+              scrollDirection: Axis.vertical,
+              itemCount: specialty.length,
+                gridDelegate:
+                    SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,mainAxisExtent: 30),
+                itemBuilder: (BuildContext context,int index){
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                    child: Text("$specialty",
+                      style: TextStyle(
+                          color: Colors.black87,
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.w500),),
+                  );
+                },),
+          )
+        ],
       ),
     );
   }
