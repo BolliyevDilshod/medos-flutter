@@ -200,10 +200,19 @@ class HomePage extends StatelessWidget {
                                 SizedBox(
                                   width: 18.0,
                                 ),
-                                Text(
-                                  "5.0",
-                                  style: TextStyle(
-                                    backgroundColor: Colors.orange,
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(5.0),
+                                  child: Container(
+                                    child: Center(
+                                      child: Text(
+                                        "5.0",
+                                        style: TextStyle(fontWeight: FontWeight.w500
+                                        ),
+                                      ),
+                                    ),
+                                    color: Colors.orange,
+                                    width: 30.0,
+                                    height: 25.0,
                                   ),
                                 ),
                                 SizedBox(

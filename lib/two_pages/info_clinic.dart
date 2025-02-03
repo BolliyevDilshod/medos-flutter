@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:medos/screens_pages/home.dart';
 import 'package:medos/screens_pages/map_page.dart';
@@ -27,6 +28,15 @@ class _InfoClinicState extends State<InfoClinic> {
     "Stomatolog",
     "UZI",
     "Labarant",
+  ];
+
+  List<String> add = [
+    "Nogironlar uchun yulak",
+    "Bolalar maydonchasi",
+    "Avto turargoh",
+    "WiFi zona",
+    "Basseyn",
+    "Bog'",
   ];
 
   @override
@@ -105,10 +115,18 @@ class _InfoClinicState extends State<InfoClinic> {
                       SizedBox(
                         width: 15.0,
                       ),
-                      Text(
-                        "5.0",
-                        style: TextStyle(
-                          backgroundColor: Colors.orange,
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(5.0),
+                        child: Container(
+                          color: Colors.orange,
+                          width: 30.0,
+                          height: 25.0,
+                          child: Center(
+                            child: Text(
+                              "5.0",
+                              style: TextStyle(fontWeight: FontWeight.w500),
+                            ),
+                          ),
                         ),
                       ),
                       SizedBox(
@@ -400,31 +418,171 @@ class _InfoClinicState extends State<InfoClinic> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0),
             child: Text(
-              "Doktorlar ixtisosligi",
+              "Shifokorlar ixtisosligi",
               style: TextStyle(
                   color: Colors.black87,
                   fontSize: 20.0,
                   fontWeight: FontWeight.w500),
             ),
           ),
-          Container(
-            height: 200.0,
-            child: GridView.builder(
-              scrollDirection: Axis.vertical,
-              itemCount: specialty.length,
-                gridDelegate:
-                    SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,mainAxisExtent: 30),
-                itemBuilder: (BuildContext context,int index){
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                    child: Text("$specialty",
-                      style: TextStyle(
-                          color: Colors.black87,
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.w500),),
-                  );
-                },),
-          )
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: Wrap(
+              direction: Axis.horizontal,
+              spacing: 10.0,
+              runSpacing: 10.0,
+              children: [
+                Text(
+                  "$specialty",
+                  style: TextStyle(color: Colors.black87, fontSize: 18.0),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 15.0,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: Text(
+              "Qo'shimcha qulayliklar",
+              style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w500),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: Wrap(
+              direction: Axis.horizontal,
+              spacing: 10.0,
+              runSpacing: 10.0,
+              children: [
+                Text(
+                  "$add",
+                  style: TextStyle(color: Colors.black87, fontSize: 18.0),
+                ),
+              ],
+            ),
+          ),
+          Divider(
+            thickness: 3,
+            color: Colors.grey[200],
+          ),
+          SizedBox(
+            height: 10.0,
+          ),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(5.0),
+                  child: Container(
+                      color: Colors.orange,
+                      width: 30.0,
+                      height: 25.0,
+                      child: Center(
+                        child: Text(
+                          "4.9",
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.w500),
+                        ),
+                      )),
+                ),
+              ),
+              Text(
+                "16 ta izohlar",
+                style: TextStyle(
+                    color: Colors.black87,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18.0),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 10.0,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(7.0),
+              child: SingleChildScrollView(
+                child: Container(
+                  color: Colors.teal[50],
+                  width: 350.0,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 12.0),
+                        child: Text(
+                          "Baholang va izoh qoldiring",
+                          style:
+                              TextStyle(color: Colors.black87, fontSize: 16.0),
+                        ),
+                      ),
+                      RatingBar.builder(
+                        unratedColor: Colors.grey[400],
+                        initialRating: 0,
+                        minRating: 0,
+                        direction: Axis.horizontal,
+                        allowHalfRating: true,
+                        itemCount: 5,
+                        itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                        itemBuilder: (context, _) => Icon(
+                          Icons.star_rate,
+                          color: Colors.teal,
+                        ),
+                        onRatingUpdate: (rating) {
+                          print(rating);
+                        },
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10.0, vertical: 5.0),
+                        child: TextFormField(
+                          minLines: 1,
+                          maxLines: 10,
+                          style: TextStyle(color: Colors.black87),
+                          decoration: InputDecoration(
+                            fillColor: Colors.grey[300],
+                            filled: true,
+                            hintText: "Izoh qoldiring",
+                            suffixStyle: TextStyle(color: Colors.grey),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15.0),
+                                borderSide: BorderSide(color: Colors.teal)),
+                          ),
+                        ),
+                      ),
+                      ElevatedButton.icon(
+                        iconAlignment: IconAlignment.end,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.teal,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                          )
+                        ),
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.send,
+                          color: Colors.white,
+                        ),
+                        label: Text(
+                          "Yuborish",
+                          style: TextStyle(color: Colors.white, fontSize: 18.0),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5.0,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
