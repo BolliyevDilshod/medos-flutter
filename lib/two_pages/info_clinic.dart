@@ -215,11 +215,9 @@ class _InfoClinicState extends State<InfoClinic> {
                     child: TabBarView(children: [
                       SingleChildScrollView(child: common()),
                       Container(
-                        color: Colors.red,
-                      ),
-                      Container(
                         color: Colors.blue,
                       ),
+                      SingleChildScrollView(child: comment()),
                       Container(
                         color: Colors.grey,
                       ),
@@ -473,117 +471,299 @@ class _InfoClinicState extends State<InfoClinic> {
           SizedBox(
             height: 10.0,
           ),
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(5.0),
-                  child: Container(
-                      color: Colors.orange,
-                      width: 30.0,
-                      height: 25.0,
-                      child: Center(
-                        child: Text(
-                          "4.9",
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.w500),
-                        ),
-                      )),
-                ),
-              ),
-              Text(
-                "16 ta izohlar",
-                style: TextStyle(
-                    color: Colors.black87,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18.0),
-              ),
-            ],
-          ),
           SizedBox(
             height: 10.0,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15.0),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(7.0),
-              child: SingleChildScrollView(
-                child: Container(
-                  color: Colors.teal[50],
-                  width: 350.0,
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 12.0),
-                        child: Text(
-                          "Baholang va izoh qoldiring",
-                          style:
-                              TextStyle(color: Colors.black87, fontSize: 16.0),
-                        ),
-                      ),
-                      RatingBar.builder(
-                        unratedColor: Colors.grey[400],
-                        initialRating: 0,
-                        minRating: 0,
-                        direction: Axis.horizontal,
-                        allowHalfRating: true,
-                        itemCount: 5,
-                        itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                        itemBuilder: (context, _) => Icon(
-                          Icons.star_rate,
-                          color: Colors.teal,
-                        ),
-                        onRatingUpdate: (rating) {
-                          print(rating);
-                        },
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10.0, vertical: 5.0),
-                        child: TextFormField(
-                          minLines: 1,
-                          maxLines: 10,
-                          style: TextStyle(color: Colors.black87),
-                          decoration: InputDecoration(
-                            fillColor: Colors.grey[300],
-                            filled: true,
-                            hintText: "Izoh qoldiring",
-                            suffixStyle: TextStyle(color: Colors.grey),
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15.0),
-                                borderSide: BorderSide(color: Colors.teal)),
+        ],
+      ),
+    );
+  }
+
+  Widget comment() {
+    return SingleChildScrollView(
+      child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 10.0,
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(5.0),
+                    child: Container(
+                        color: Colors.orange,
+                        width: 30.0,
+                        height: 25.0,
+                        child: Center(
+                          child: Text(
+                            "4.9",
+                            style: TextStyle(
+                                color: Colors.white, fontWeight: FontWeight.w500),
+                          ),
+                        )),
+                  ),
+                ),
+                Text(
+                  "16 ta izohlar",
+                  style: TextStyle(
+                      color: Colors.black87,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18.0),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(7.0),
+                child: SingleChildScrollView(
+                  child: Container(
+                    color: Colors.teal[50],
+                    width: 350.0,
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 12.0),
+                          child: Text(
+                            "Baholang va izoh qoldiring",
+                            style:
+                                TextStyle(color: Colors.black87, fontSize: 16.0),
                           ),
                         ),
-                      ),
-                      ElevatedButton.icon(
-                        iconAlignment: IconAlignment.end,
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.teal,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15.0),
-                          )
+                        RatingBar.builder(
+                          unratedColor: Colors.grey[400],
+                          initialRating: 0,
+                          minRating: 0,
+                          direction: Axis.horizontal,
+                          allowHalfRating: true,
+                          itemCount: 5,
+                          itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                          itemBuilder: (context, _) => Icon(
+                            Icons.star_rate,
+                            color: Colors.teal,
+                          ),
+                          onRatingUpdate: (rating) {
+                            print(rating);
+                          },
                         ),
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.send,
-                          color: Colors.white,
+                        SizedBox(
+                          height: 20.0,
                         ),
-                        label: Text(
-                          "Yuborish",
-                          style: TextStyle(color: Colors.white, fontSize: 18.0),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 5.0,
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-        ],
+            SizedBox(
+              height: 10.0,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Text(
+                "Ism-sharfingiz",
+                style: TextStyle(color: Colors.black54),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: TextField(
+                style: TextStyle(color: Colors.black87),
+                cursorColor: Colors.teal,
+                decoration: InputDecoration(
+                  fillColor: Colors.grey[200],
+                  filled: true,
+                  hintText: "Ism-sharifingizni kiriting",
+                  border: UnderlineInputBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Text(
+                "Telefon raqamingiz",
+                style: TextStyle(color: Colors.black54),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: TextField(
+                style: TextStyle(color: Colors.black87),
+                cursorColor: Colors.teal,
+                keyboardType: TextInputType.phone,
+                decoration: InputDecoration(
+                    fillColor: Colors.grey[200],
+                    filled: true,
+                    hintText: "Telefon raqamingizni kiriting",
+                    border: UnderlineInputBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    )),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Text(
+                "Sizning xavfsizligingiz uchun telefon raqami boshqa foydalanuvchilarga ko‘rinmaydi.",
+                style: TextStyle(color: Colors.grey[500]),
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
+              child: TextFormField(
+                minLines: 1,
+                maxLines: 10,
+                style: TextStyle(color: Colors.black87),
+                decoration: InputDecoration(
+                  fillColor: Colors.grey[300],
+                  filled: true,
+                  hintText: "Izoh qoldiring",
+                  suffixStyle: TextStyle(color: Colors.grey),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                      borderSide: BorderSide(color: Colors.teal)),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Text(
+                "Barcha sharhlar tekshiruvdan o'tadi",
+                style: TextStyle(color: Colors.grey[500]),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.teal,
+                    padding:
+                        EdgeInsets.symmetric(vertical: 15.0, horizontal: 128.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    )),
+                onPressed: () {},
+                child: Text(
+                  "Yuborish",
+                  style: TextStyle(color: Colors.white, fontSize: 18.0),
+                ),
+              ),
+            ),
+            // SizedBox(height: 15.0,),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: Container(
+                  width: 330.0,
+                  height: 400.0,
+                  child: ListView.builder(
+                    itemBuilder: (BuildContext context, index) {
+                      return Column(
+                        children: [
+                          Row(
+                            children: [
+                              CircleAvatar(
+                                child: Text("D"),
+                                backgroundColor: Colors.orange,
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8.0),
+                                child: Text(
+                                  "Durdona Valiyeva",
+                                  style: TextStyle(
+                                      color: Colors.black87,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.star_rate_sharp,
+                                color: Colors.tealAccent,
+                              ),
+                              Icon(
+                                Icons.star_rate_sharp,
+                                color: Colors.tealAccent,
+                              ),
+                              Icon(
+                                Icons.star_rate_sharp,
+                                color: Colors.tealAccent,
+                              ),
+                              Icon(
+                                Icons.star_rate_sharp,
+                                color: Colors.tealAccent,
+                              ),
+                              Icon(
+                                Icons.star_rate_sharp,
+                                color: Colors.tealAccent,
+                              ),
+                              SizedBox(
+                                width: 15.0,
+                              ),
+                              Text(
+                                "4-fevral, 2025",
+                                style: TextStyle(color: Colors.grey),
+                              ),
+                            ],
+                          ),
+                          Text(
+                            "Chiroyli zamonaviy klinika. Men operatsiyani o‘tkazdim va keyin bir "
+                            "necha kun o‘sha erda qoldim. Yoqimli va sezgir tibbiyot xodimlari, "
+                            "sabrlari uchun ularga alohida rahmat! Va, albatta, davolovchi shifokor "
+                            "Rustam Ashurmatovga RAHMAT! Diqqatli va yoqimli shifokorlar, o‘z "
+                            "sohasining professionallari. Sizga katta rahmat!!!!",
+                            style: TextStyle(color: Colors.black87,fontSize: 16.0),
+                          ),
+                        ],
+                      );
+                    },
+                    itemCount: 5,
+                  ),
+                ),
+              ),
+            SizedBox(height: 20.0,),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.teal,
+                    padding:
+                    EdgeInsets.symmetric(vertical: 15.0, horizontal: 95.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    )),
+                onPressed: () {},
+                child: Text(
+                  "Qabulga yozilish",
+                  style: TextStyle(color: Colors.white, fontSize: 18.0),
+                ),
+              ),
+            ),
+            SizedBox(height: 20.0,),
+          ],
+        ),
       ),
     );
   }

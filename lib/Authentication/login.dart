@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
 import 'confirmation_page.dart';
 
 class Login extends StatefulWidget {
