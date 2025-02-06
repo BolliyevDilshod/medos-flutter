@@ -274,7 +274,7 @@ class SavePage extends StatelessWidget {
                                     children: [
                                       Padding(
                                         padding: const EdgeInsets.symmetric(
-                                          vertical: 5.0,
+                                          vertical: 6.0,horizontal: 1.0
                                         ),
                                         child: Text(
                                           "Aktubayev Alisher",
@@ -313,7 +313,8 @@ class SavePage extends StatelessWidget {
                                           ),
                                         ],
                                       ),
-                                    ],
+                                    ],mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                   ),
                                 ],
                               ),
