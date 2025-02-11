@@ -82,7 +82,7 @@ class HomePage extends StatelessWidget {
                   leading: const Icon(
                     Icons.search_outlined,
                     color: Colors.black87,
-                    size: 33.0,
+                    size: 25.0,
                   ),
                   hintText: "Qidirish",
                   hintStyle: WidgetStateProperty.all(
@@ -90,9 +90,9 @@ class HomePage extends StatelessWidget {
                   ),
                   textStyle:
                       WidgetStateProperty.all(TextStyle(color: Colors.black87)),
-                  backgroundColor: WidgetStateProperty.all(Colors.grey[300]),
+                  backgroundColor: WidgetStateProperty.all(Colors.grey[200]),
                   shadowColor: WidgetStateProperty.all(Colors.black87),
-                  elevation: WidgetStateProperty.all(2.0),
+                  elevation: WidgetStateProperty.all(1.0),
                   padding: WidgetStateProperty.all(
                     EdgeInsets.symmetric(horizontal: 16.0, vertical: 1.0),
                   ),
@@ -112,7 +112,7 @@ class HomePage extends StatelessWidget {
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15.0),
-                            color: Colors.grey[300],
+                            color: Colors.grey[200],
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -206,8 +206,8 @@ class HomePage extends StatelessWidget {
                                     child: Center(
                                       child: Text(
                                         "5.0",
-                                        style: TextStyle(fontWeight: FontWeight.w500
-                                        ),
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w500),
                                       ),
                                     ),
                                     color: Colors.orange,
@@ -371,11 +371,13 @@ class HomePage extends StatelessWidget {
                                     child: Text(
                                       "Batafsil",
                                       style: TextStyle(
-                                          color: Colors.teal,
-                                          fontSize: 17.0,
-                                          fontWeight: FontWeight.w500,
-                                          decoration: TextDecoration.underline,
-                                          decorationColor: Colors.teal),
+                                        color: Colors.teal,
+                                        fontSize: 17.0,
+                                        fontWeight: FontWeight.w500,
+                                        decoration: TextDecoration.underline,
+                                        decorationColor: Colors.teal,
+                                        decorationThickness: 2,
+                                      ),
                                     ),
                                   ),
                                   onTap: () {
@@ -397,7 +399,7 @@ class HomePage extends StatelessWidget {
                                       style: TextStyle(color: Colors.teal),
                                     ),
                                     icon: Icon(
-                                      Icons.near_me_outlined,
+                                      Icons.near_me_rounded,
                                       color: Colors.teal,
                                     ),
                                     style: ElevatedButton.styleFrom(

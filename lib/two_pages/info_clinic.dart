@@ -218,9 +218,7 @@ class _InfoClinicState extends State<InfoClinic> {
                         common(),
                         doctor(),
                         comment(),
-                        Container(
-                          color: Colors.grey,
-                        ),
+                        services(),
                       ],
                     ),
                   ),
@@ -574,7 +572,9 @@ class _InfoClinicState extends State<InfoClinic> {
                           print(rating);
                         },
                       ),
-                      SizedBox(height: 5.0,),
+                      SizedBox(
+                        height: 5.0,
+                      ),
                       GestureDetector(
                         onTap: () {
                           Navigator.push(
@@ -587,7 +587,10 @@ class _InfoClinicState extends State<InfoClinic> {
                           children: [
                             Text(
                               "Baholang",
-                              style: TextStyle(color: Colors.teal,decoration: TextDecoration.underline,decorationColor: Colors.teal),
+                              style: TextStyle(
+                                  color: Colors.teal,
+                                  decoration: TextDecoration.underline,
+                                  decorationColor: Colors.teal),
                             ),
                             Padding(
                               padding:
@@ -928,6 +931,371 @@ class _InfoClinicState extends State<InfoClinic> {
               ],
             );
           }),
+    );
+  }
+
+  Widget services() {
+    return SingleChildScrollView(
+      child: Container(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 10.0,
+              ),
+              SearchBar(
+                leading: const Icon(
+                  Icons.search_outlined,
+                  color: Colors.black87,
+                  size: 25.0,
+                ),
+                hintText: "Qidirish",
+                hintStyle: WidgetStateProperty.all(
+                  TextStyle(color: Colors.black26),
+                ),
+                textStyle:
+                    WidgetStateProperty.all(TextStyle(color: Colors.black87)),
+                backgroundColor: WidgetStateProperty.all(Colors.grey[200]),
+                shadowColor: WidgetStateProperty.all(Colors.black87),
+                elevation: WidgetStateProperty.all(1.0),
+                padding: WidgetStateProperty.all(
+                  EdgeInsets.symmetric(horizontal: 16.0, vertical: 1.0),
+                ),
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Container(
+                width: 340,
+                height: 50.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15.0),
+                  color: Colors.grey[200],
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          height: 44.0,
+                          width: 165.0,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(15.0)),
+                          child: Center(
+                            child: Text(
+                              "Diagnostika",
+                              style: TextStyle(
+                                  color: Colors.black54,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        )),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Text(
+                        "Tibbiy xizmatlar",
+                        style: TextStyle(
+                            color: Colors.black54,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                width: 340.0,
+                height: 150.0,
+                child: ListView.builder(
+                    itemCount: 1,
+                    itemBuilder: (BuildContext context, index) {
+                      return Wrap(
+                        direction: Axis.horizontal,
+                        spacing: 2.0,
+                        runSpacing: 5.0,
+                        children: [
+                          Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                "Stomatolog",
+                                style: TextStyle(color: Colors.black87),
+                              ),
+                            ),
+                            color: Colors.grey[300],
+                          ),
+                          Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                "Lor",
+                                style: TextStyle(color: Colors.black87),
+                              ),
+                            ),
+                            color: Colors.grey[300],
+                          ),
+                          Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                "Urolog",
+                                style: TextStyle(color: Colors.black87),
+                              ),
+                            ),
+                            color: Colors.grey[300],
+                          ),
+                          Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                "Laboratoriya",
+                                style: TextStyle(color: Colors.black87),
+                              ),
+                            ),
+                            color: Colors.grey[300],
+                          ),
+                          Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                "MSKT",
+                                style: TextStyle(color: Colors.black87),
+                              ),
+                            ),
+                            color: Colors.grey[300],
+                          ),
+                        ],
+                      );
+                    }),
+              ),
+              Row(
+                children: [
+                  Text(
+                    "Stomatolog",
+                    style: TextStyle(
+                        color: Colors.black87,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0),
+                  ),
+                  SizedBox(
+                    width: 20.0,
+                  ),
+                  Text(
+                    "3",
+                    style: TextStyle(
+                        color: Colors.grey,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Bolalar stomatologi",
+                    style: TextStyle(color: Colors.black87),
+                  ),
+                  Text(
+                    "120 000 so'm",
+                    style: TextStyle(color: Colors.black87),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Stomatolog jarrox",
+                    style: TextStyle(color: Colors.black87),
+                  ),
+                  Text(
+                    "200 000 so'm",
+                    style: TextStyle(color: Colors.black87),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Stomatolog implantant",
+                    style: TextStyle(color: Colors.black87),
+                  ),
+                  Text(
+                    "1 200 000 so'm",
+                    style: TextStyle(color: Colors.black87),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Row(
+                children: [
+                  Text(
+                    "Lor",
+                    style: TextStyle(
+                        color: Colors.black87,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0),
+                  ),
+                  SizedBox(
+                    width: 20.0,
+                  ),
+                  Text(
+                    "2",
+                    style: TextStyle(
+                        color: Colors.grey,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Bolalar Lor shifokori",
+                    style: TextStyle(color: Colors.black87),
+                  ),
+                  Text(
+                    "120 000 so'm",
+                    style: TextStyle(color: Colors.black87),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Lor jarrox",
+                    style: TextStyle(color: Colors.black87),
+                  ),
+                  Text(
+                    "200 000 so'm",
+                    style: TextStyle(color: Colors.black87),
+                  ),
+                ],
+              ),
+              GestureDetector(
+                onTap: (){},
+                child: Text(
+                  "Barchasini ko'rsatish",
+                  style: TextStyle(
+                      color: Colors.teal,
+                      decoration: TextDecoration.underline,
+                      decorationColor: Colors.teal,
+                      decorationThickness: 2),
+                ),
+              ),
+              Row(
+                children: [
+                  Text(
+                    "Laboratoriya",
+                    style: TextStyle(
+                        color: Colors.black87,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0),
+                  ),
+                  SizedBox(
+                    width: 20.0,
+                  ),
+                  Text(
+                    "150",
+                    style: TextStyle(
+                        color: Colors.grey,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Qon analizi",
+                    style: TextStyle(color: Colors.black87),
+                  ),
+                  Text(
+                    "50 000 so'm",
+                    style: TextStyle(color: Colors.black87),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Gipatet A",
+                    style: TextStyle(color: Colors.black87),
+                  ),
+                  Text(
+                    "200 000 so'm",
+                    style: TextStyle(color: Colors.black87),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Gipatet B",
+                    style: TextStyle(color: Colors.black87),
+                  ),
+                  Text(
+                    "200 000 so'm",
+                    style: TextStyle(color: Colors.black87),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Gipatet C",
+                    style: TextStyle(color: Colors.black87),
+                  ),
+                  Text(
+                    "200 000 so'm",
+                    style: TextStyle(color: Colors.black87),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Umumiy qon taxlili",
+                    style: TextStyle(color: Colors.black87),
+                  ),
+                  Text(
+                    "60 000 so'm",
+                    style: TextStyle(color: Colors.black87),
+                  ),
+                ],
+              ),
+              GestureDetector(
+                onTap: (){},
+                child: Text(
+                  "Barchasini ko'rsatish",
+                  style: TextStyle(
+                      color: Colors.teal,
+                      decoration: TextDecoration.underline,
+                      decorationColor: Colors.teal,
+                      decorationThickness: 2),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
