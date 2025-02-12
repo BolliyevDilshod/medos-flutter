@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:medos/screens_pages/menu_drawer.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:medos/screens_pages/menu_reg.dart';
-import 'package:medos/screens_pages/save_page.dart';
-import 'package:medos/two_pages/info_project.dart';
+import '../two_pages/buttomNavBar.dart';
 import '../two_pages/info_clinic.dart';
 import 'map_page.dart';
-import 'nav_bar.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   String? selectedValue;
   List<String> listdropdown = ["Diagnostika", "Lor", "Urologiya", "Onkologiya"];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,26 +54,35 @@ class HomePage extends StatelessWidget {
         ]),
         centerTitle: true,
       ),
-      bottomNavigationBar: NavigationBar(
-        destinations: [
-          NavigationDestination(
-            icon: Icon(Icons.person_outline_rounded),
-            label: "Shifokorlar",
+      bottomNavigationBar:
+        Container(
+          color: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 15.0),
+            child: GNav(
+              gap: 8,
+              backgroundColor: Colors.white,
+              tabBackgroundColor: Colors.grey.shade300,
+              padding: EdgeInsets.all(10),
+              color: Colors.black87,
+              activeColor: Colors.teal,
+              onTabChange: (index){
+                print(index);
+              },
+              tabs: const[
+                GButton(
+                  icon: Icons.location_on_outlined,text: "Shifoxona",),
+                GButton(
+                  icon: Icons.groups_outlined,text: "Shifokor",),
+                GButton(
+                  icon: Icons.home_mini_sharp,text: "Dorixona",),
+                GButton(
+                  icon: Icons.monitor_heart_outlined,text: "Xizmat",),
+              ],
+            ),
           ),
-          NavigationDestination(
-            icon: Icon(Icons.location_on_outlined),
-            label: "Shifoxonalar",
-          ),
-          NavigationDestination(
-              icon: Icon(Icons.home_mini_sharp), label: "Dorixonalar"),
-          NavigationDestination(
-              icon: Icon(Icons.monitor_heart_outlined), label: "Xizmatlar")
-        ],
-        backgroundColor: Colors.white,
-        elevation: 4.0,
-        indicatorColor: Colors.teal,
-        shadowColor: Colors.teal,
-      ),
+        ),
+
       body: SafeArea(
         child: Container(
           color: Colors.white,
@@ -77,7 +90,7 @@ class HomePage extends StatelessWidget {
             children: [
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 16.0, vertical: 3.0),
+                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 3.0),
                 child: SearchBar(
                   leading: const Icon(
                     Icons.search_outlined,
@@ -89,7 +102,7 @@ class HomePage extends StatelessWidget {
                     TextStyle(color: Colors.black26),
                   ),
                   textStyle:
-                      WidgetStateProperty.all(TextStyle(color: Colors.black87)),
+                  WidgetStateProperty.all(TextStyle(color: Colors.black87)),
                   backgroundColor: WidgetStateProperty.all(Colors.grey[200]),
                   shadowColor: WidgetStateProperty.all(Colors.black87),
                   elevation: WidgetStateProperty.all(1.0),
@@ -100,7 +113,7 @@ class HomePage extends StatelessWidget {
               ),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(vertical: 1.0, horizontal: 10.0),
+                const EdgeInsets.symmetric(vertical: 1.0, horizontal: 10.0),
                 child: Container(
                   height: 60,
                   child: ListView.builder(
@@ -406,7 +419,7 @@ class HomePage extends StatelessWidget {
                                       backgroundColor: Colors.grey[100],
                                       shape: RoundedRectangleBorder(
                                         borderRadius:
-                                            BorderRadius.circular(15.0),
+                                        BorderRadius.circular(15.0),
                                         side: BorderSide(
                                           width: 1,
                                           color: Colors.teal,
@@ -433,6 +446,7 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
-
-  void setState(Null Function() param0) {}
 }
+
+
+
