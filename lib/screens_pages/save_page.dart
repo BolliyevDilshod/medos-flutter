@@ -265,9 +265,13 @@ class SavePage extends StatelessWidget {
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 15.0, vertical: 10.0),
                                     child: CircleAvatar(
-                                      backgroundImage:
-                                          AssetImage("images/tiger.jpg"),
-                                      radius: 40.0,
+                                      child: CircleAvatar(
+                                        backgroundImage:
+                                            AssetImage("images/tiger.jpg"),
+                                        radius: 40.0,
+                                      ),
+                                      maxRadius: 42.0,
+                                      backgroundColor: Colors.teal,
                                     ),
                                   ),
                                   Column(

@@ -18,7 +18,7 @@ class Menu_Reg extends StatelessWidget {
             Image.asset(
               "images/medos_logo.png",
               width: 160.0,
-              height: 160.0,
+              height: 120.0,
             ),
             ElevatedButton(
               onPressed: () {

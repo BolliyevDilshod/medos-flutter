@@ -18,24 +18,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   String? selectedValue;
   List<String> listdropdown = ["Diagnostika", "Lor", "Urologiya", "Onkologiya"];
-  PageController pageController = PageController();
-  List<Widget> pages = [
-    HomePage(),
-    DoctorPage(),
-    PharmacyPage(),
-    ServicesPage()
-  ];
-  int _selectedindexgnav = 0;
-
-  void onChangeItem(int index) {
-    setState(() {
-      _selectedindexgnav = index;
-    });
-  }
-
-  void onTabItem(int selctedItem) {
-    pageController.jumpToPage(_selectedindexgnav);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +37,7 @@ class _HomePageState extends State<HomePage> {
           style: TextStyle(fontSize: 16.0),
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20.0),
+          borderRadius: BorderRadius.circular(40.0),
         ),
       ),
       appBar: AppBar(
