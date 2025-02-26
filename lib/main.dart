@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:medos/screens_pages/home.dart';
 import 'package:medos/screens_pages/map_page.dart';
+import 'package:medos/two_pages/buttomNavBar.dart';
+import 'package:medos/two_pages/navigationbar.dart';
 import 'screens_pages/save_page.dart';
 
 void main() {
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
-      home: HomePage(),
+      home: Navigationbar(),
     );
   }
 }

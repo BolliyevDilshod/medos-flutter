@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:medos/screens_pages/doctor_page.dart';
 import 'package:medos/screens_pages/menu_reg.dart';
+import 'package:medos/screens_pages/pharmacy_page.dart';
+import 'package:medos/screens_pages/services_page.dart';
 import '../two_pages/buttomNavBar.dart';
 import '../two_pages/info_clinic.dart';
 import 'map_page.dart';
@@ -15,6 +18,25 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   String? selectedValue;
   List<String> listdropdown = ["Diagnostika", "Lor", "Urologiya", "Onkologiya"];
+  PageController pageController = PageController();
+  List<Widget> pages = [
+    HomePage(),
+    DoctorPage(),
+    PharmacyPage(),
+    ServicesPage()
+  ];
+  int _selectedindexgnav = 0;
+
+  void onChangeItem(int index) {
+    setState(() {
+      _selectedindexgnav = index;
+    });
+  }
+
+  void onTabItem(int selctedItem) {
+    pageController.jumpToPage(_selectedindexgnav);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,34 +76,6 @@ class _HomePageState extends State<HomePage> {
         ]),
         centerTitle: true,
       ),
-      bottomNavigationBar:
-        Container(
-          color: Colors.white,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 15.0),
-            child: GNav(
-              gap: 8,
-              backgroundColor: Colors.white,
-              tabBackgroundColor: Colors.grey.shade300,
-              padding: EdgeInsets.all(10),
-              color: Colors.black87,
-              activeColor: Colors.teal,
-              onTabChange: (index){
-                print(index);
-              },
-              tabs: const[
-                GButton(
-                  icon: Icons.location_on_outlined,text: "Shifoxona",),
-                GButton(
-                  icon: Icons.groups_outlined,text: "Shifokor",),
-                GButton(
-                  icon: Icons.home_mini_sharp,text: "Dorixona",),
-                GButton(
-                  icon: Icons.monitor_heart_outlined,text: "Xizmat",),
-              ],
-            ),
-          ),
-        ),
 
       body: SafeArea(
         child: Container(

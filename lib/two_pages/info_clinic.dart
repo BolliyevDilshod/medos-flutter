@@ -1195,6 +1195,7 @@ class _InfoClinicState extends State<InfoClinic> {
                       decorationThickness: 2),
                 ),
               ),
+              SizedBox(height: 10.0,),
               Row(
                 children: [
                   Text(
@@ -1292,6 +1293,7 @@ class _InfoClinicState extends State<InfoClinic> {
                       decorationThickness: 2),
                 ),
               ),
+              SizedBox(height: 10.0,),
             ],
           ),
         ),
