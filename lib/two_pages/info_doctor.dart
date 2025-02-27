@@ -568,10 +568,73 @@ class _InfoDoctorState extends State<InfoDoctor> {
                 height: 20.0,
               ),
               Container(
-                width: 264.0,
                 height: 160.0,
-                color: Colors.red,
-              )
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 2,
+                  itemBuilder: (BuildContext context, index){
+                    return ClipRRect(
+                      borderRadius: BorderRadius.circular(15.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                        width: 264.0,
+                        height: 160.0,
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  CircleAvatar(
+                                    backgroundColor: Colors.teal,
+                                    child: Text("J"),
+                                  ),
+                                  SizedBox(
+                                    width: 8.0,
+                                  ),
+                                  Text("Aktubayev Alisher",style: TextStyle(color: Colors.black87,fontWeight: FontWeight.w500),),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  RatingBar.builder(
+                                    unratedColor: Colors.grey[400],
+                                    initialRating: 0,
+                                    minRating: 0,
+                                    itemSize: 15.0,
+                                    direction: Axis.horizontal,
+                                    itemCount: 5,
+                                    itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
+                                    itemBuilder: (context, _) => Icon(
+                                      Icons.star_rate,
+                                      color: Colors.teal,
+                                    ),
+                                    onRatingUpdate: (rating) {
+                                      print(rating);
+                                    },
+                                  ),
+                                  SizedBox(
+                                    width: 8.0,
+                                  ),
+                                  Text("27-fevral 2025",style: TextStyle(color: Colors.grey),),
+                                ],
+                              ),
+                              Text("Chiroyli zamonaviy klinika. Men operatsiyani "
+                                  "o‘tkazdim va keyin bir necha kun o‘sha erda qoldim. "
+                                  "Yoqimli va sezgir tibbiyot xodimlari, sabrlari ",style: TextStyle(color: Colors.black87),),
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  }
+                ),
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
             ],
           ),
         ),
