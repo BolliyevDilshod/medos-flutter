@@ -10,8 +10,14 @@ class DoctorPage extends StatefulWidget {
 }
 
 class _DoctorPageState extends State<DoctorPage> {
-  String? selectedValue;
-  List<String> listdropdown = ["Diagnostika", "Lor", "Urologiya", "Onkologiya"];
+  String? _selectedItem;
+  final List<String> _items = ["Toshkent", "Samarqand", "Jizzax", "Andijon"];
+  String? _selectItem;
+  final List<String> _itemes = ["Stomatolog", "Lor", "Urolog", "Terapevt"];
+  String? _selectedValue;
+  final List<String> _list = ["Arzondan-Qimmatga", "Qimmatdan-Arzonga"];
+  String? _selectValue;
+  final List<String> _lists = ["Erkak", "Ayol"];
 
   @override
   Widget build(BuildContext context) {
@@ -84,10 +90,63 @@ class _DoctorPageState extends State<DoctorPage> {
                         child: Container(
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              "Mutaxasislik",
-                              style: TextStyle(
-                                  color: Colors.black87, fontSize: 18.0),
+                            child: DropdownButton(
+                                iconEnabledColor: Colors.black87,
+                                iconDisabledColor: Colors.teal,
+                                iconSize: 30.0,
+                                borderRadius: BorderRadius.circular(20.0),
+                                dropdownColor: Colors.white,
+                              value: _selectedItem,
+                              hint: Text(
+                              "Viloyat",
+                              style: TextStyle(color: Colors.black87),
+                            ),
+                                items: _items.map((String item){
+                                  return DropdownMenuItem<String>(
+                                    value: item,
+                                    child: Text(item,style:TextStyle(color: Colors.black87)),
+                                  );
+                                }).toList(),
+                                onChanged: (String? newValue) {
+                                  setState(() {
+                                    _selectedItem = newValue;
+                                  });
+                                },),
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0),
+                            color: Colors.grey[200],
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10.0, vertical: 12.0),
+                        child: Container(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: DropdownButton(
+                                iconEnabledColor: Colors.black87,
+                                iconDisabledColor: Colors.teal,
+                                iconSize: 30.0,
+                                borderRadius: BorderRadius.circular(20.0),
+                                dropdownColor: Colors.white,
+                                value: _selectItem,
+                                hint: Text(
+                                  "Mutaxasislik",
+                                  style: TextStyle(color: Colors.black87),
+                                ),
+                                items: _itemes.map((String item){
+                                  return DropdownMenuItem<String>(
+                                    value: item,
+                                    child: Text(item,style: TextStyle(color: Colors.black87),),
+                                  );
+                                }).toList(),
+                                onChanged: (String? newValue){
+                                  setState(() {
+                                    _selectItem = newValue;
+                                  });
+                                },
                             ),
                           ),
                           decoration: BoxDecoration(
@@ -102,11 +161,29 @@ class _DoctorPageState extends State<DoctorPage> {
                         child: Container(
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              "Mutaxasisliklar",
-                              style: TextStyle(
-                                  color: Colors.black87, fontSize: 18.0),
-                            ),
+                            child: DropdownButton(
+                                iconEnabledColor: Colors.black87,
+                                iconDisabledColor: Colors.teal,
+                                iconSize: 30.0,
+                                borderRadius: BorderRadius.circular(20.0),
+                                dropdownColor: Colors.white,
+                                value: _selectedValue,
+                                hint: Text(
+                                  "Narx",
+                                  style: TextStyle(color: Colors.black87),
+                                ),
+                                items: _list.map((String item){
+                                  return DropdownMenuItem<String>(
+                                    value: item,
+                                    child: Text(item,style: TextStyle(color: Colors.black87),),
+                                  );
+                                }).toList(),
+                                onChanged: (String? newValue){
+                                  setState(() {
+                                    _selectedValue = newValue;
+                                  });
+                          }
+                          ),
                           ),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.0),
@@ -120,29 +197,28 @@ class _DoctorPageState extends State<DoctorPage> {
                         child: Container(
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              "Reyting",
-                              style: TextStyle(
-                                  color: Colors.black87, fontSize: 18.0),
-                            ),
-                          ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.0),
-                            color: Colors.grey[200],
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10.0, vertical: 12.0),
-                        child: Container(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              "Mutaxasislik turi",
-                              style: TextStyle(
-                                  color: Colors.black87, fontSize: 18.0),
-                            ),
+                            child: DropdownButton(
+                                iconEnabledColor: Colors.black87,
+                                iconDisabledColor: Colors.teal,
+                                iconSize: 30.0,
+                                borderRadius: BorderRadius.circular(20.0),
+                                dropdownColor: Colors.white,
+                                value: _selectValue,
+                                hint: Text(
+                                  "Jinsi",
+                                  style: TextStyle(color: Colors.black87),
+                                ),
+                                items: _lists.map((String item){
+                                  return DropdownMenuItem<String>(
+                                      value: item,
+                                      child: Text(item,style: TextStyle(color: Colors.black87),),
+                                  );
+                                }).toList(),
+                                onChanged: (String? newValue){
+                                  setState(() {
+                                    _selectValue = newValue;
+                                  });
+                                }),
                           ),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.0),
