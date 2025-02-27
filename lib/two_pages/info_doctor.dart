@@ -1,4 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:medos/two_pages/write_comment_page.dart';
 
 class InfoDoctor extends StatefulWidget {
   const InfoDoctor({super.key});
@@ -8,6 +13,13 @@ class InfoDoctor extends StatefulWidget {
 }
 
 class _InfoDoctorState extends State<InfoDoctor> {
+  final Completer<GoogleMapController> _completer = Completer();
+
+  static const CameraPosition _cameraPosition = CameraPosition(
+    target: LatLng(39.978002, 65.811049),
+    zoom: 8.0,
+  );
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -33,11 +45,11 @@ class _InfoDoctorState extends State<InfoDoctor> {
             ),
             Center(
               child: CircleAvatar(
-                maxRadius: 72.0,
+                maxRadius: 68.0,
                 backgroundColor: Colors.teal,
                 child: CircleAvatar(
                   backgroundImage: AssetImage("images/doktor1.jpg"),
-                  maxRadius: 70.0,
+                  maxRadius: 66.0,
                   minRadius: 20.0,
                 ),
               ),
@@ -330,6 +342,236 @@ class _InfoDoctorState extends State<InfoDoctor> {
               SizedBox(
                 height: 10.0,
               ),
+              Text(
+                "Doktor haqida",
+                style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.w500),
+              ),
+              SizedBox(
+                height: 5.0,
+              ),
+              Text(
+                "Aktubayeva Anora ko‘p yillar davomida teri, "
+                "soch va tirnoq kasalliklarini tashxislash, "
+                "davolash va oldini olish bilan shug‘ullanadi."
+                " U teri saratonini tashxislash uchun "
+                "dermatoskopiya texnikasiga ega va radio "
+                "to‘lqinli jarrohlik yordamida teridagi sh....",
+                style: TextStyle(
+                  color: Colors.black87,
+                ),
+                overflow: TextOverflow.ellipsis,
+                maxLines: 6,
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Divider(
+                height: 1,
+                thickness: 2,
+                color: Colors.grey[300],
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Text(
+                "Ish joyi",
+                style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.w500),
+              ),
+              SizedBox(
+                height: 5.0,
+              ),
+              Text(
+                "Akademik Y.X.Turakulov nomidagi Respublika ixtisoslashtirilgan endokrinolog",
+                style: TextStyle(
+                  color: Colors.black87,
+                ),
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Container(
+                width: 340.0,
+                height: 150.0,
+                child: GoogleMap(
+                    initialCameraPosition: _cameraPosition,
+                    onMapCreated: (GoogleMapController controller) {
+                      _completer.complete(controller);
+                    }),
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Text(
+                "Manzil",
+                style: TextStyle(color: Colors.grey[500]),
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      "Shayxontohur tumani, Kichik Xalqa yo‘li, 9-uy  Beruniy metrosi",
+                      style: TextStyle(color: Colors.black87),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: CircleAvatar(
+                      backgroundColor: Colors.grey[200],
+                      child: Icon(
+                        Icons.near_me_rounded,
+                        color: Colors.teal,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Text(
+                "Bog'lanish",
+                style: TextStyle(color: Colors.grey[500]),
+              ),
+              Row(
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "+99894 630 05 63",
+                    style: TextStyle(color: Colors.black87, fontSize: 18),
+                  ),
+                  CircleAvatar(
+                      backgroundColor: Colors.grey[200],
+                      child: Icon(
+                        Icons.call,
+                        color: Colors.teal,
+                        size: 20,
+                      ))
+                ],
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Divider(
+                height: 1,
+                thickness: 2,
+                color: Colors.grey[300],
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.star_outlined,
+                    color: Colors.red[500],
+                  ),
+                  SizedBox(
+                    width: 5.0,
+                  ),
+                  Text(
+                    "4.9",
+                    style: TextStyle(
+                        color: Colors.red[300], fontWeight: FontWeight.w500),
+                  ),
+                  SizedBox(
+                    width: 5.0,
+                  ),
+                  Text(
+                    "16 ta izohlar",
+                    style: TextStyle(
+                        color: Colors.black87,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17.0),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(7.0),
+                child: Container(
+                  color: Colors.teal[50],
+                  width: 350.0,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 12.0),
+                        child: Text(
+                          "Baholang va izoh qoldiring",
+                          style:
+                              TextStyle(color: Colors.black87, fontSize: 16.0),
+                        ),
+                      ),
+                      RatingBar.builder(
+                        unratedColor: Colors.grey[400],
+                        initialRating: 0,
+                        minRating: 0,
+                        direction: Axis.horizontal,
+                        allowHalfRating: true,
+                        itemCount: 5,
+                        itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                        itemBuilder: (context, _) => Icon(
+                          Icons.star_rate,
+                          color: Colors.teal,
+                        ),
+                        onRatingUpdate: (rating) {
+                          print(rating);
+                        },
+                      ),
+                      SizedBox(
+                        height: 5.0,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => WriteCommentPage()));
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text(
+                              "Baholang",
+                              style: TextStyle(
+                                  color: Colors.teal,
+                                  decoration: TextDecoration.underline,
+                                  decorationColor: Colors.teal),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 15.0),
+                              child: Icon(
+                                Icons.send,
+                                color: Colors.teal,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              Container(
+                width: 264.0,
+                height: 160.0,
+                color: Colors.red,
+              )
             ],
           ),
         ),
