@@ -343,7 +343,7 @@ class _InfoDoctorState extends State<InfoDoctor> {
                 height: 10.0,
               ),
               Text(
-                "Doktor haqida",
+                "Shifokor haqida",
                 style: TextStyle(
                     color: Colors.black87,
                     fontSize: 20.0,
@@ -570,70 +570,428 @@ class _InfoDoctorState extends State<InfoDoctor> {
               Container(
                 height: 160.0,
                 child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 2,
-                  itemBuilder: (BuildContext context, index){
-                    return ClipRRect(
-                      borderRadius: BorderRadius.circular(15.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15.0),
-                        ),
-                        width: 264.0,
-                        height: 160.0,
-                        child: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Column(
-                            children: [
-                              Row(
-                                children: [
-                                  CircleAvatar(
-                                    backgroundColor: Colors.teal,
-                                    child: Text("J"),
-                                  ),
-                                  SizedBox(
-                                    width: 8.0,
-                                  ),
-                                  Text("Aktubayev Alisher",style: TextStyle(color: Colors.black87,fontWeight: FontWeight.w500),),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  RatingBar.builder(
-                                    unratedColor: Colors.grey[400],
-                                    initialRating: 0,
-                                    minRating: 0,
-                                    itemSize: 15.0,
-                                    direction: Axis.horizontal,
-                                    itemCount: 5,
-                                    itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
-                                    itemBuilder: (context, _) => Icon(
-                                      Icons.star_rate,
-                                      color: Colors.teal,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 2,
+                    itemBuilder: (BuildContext context, index) {
+                      return ClipRRect(
+                        borderRadius: BorderRadius.circular(15.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          width: 264.0,
+                          height: 160.0,
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    CircleAvatar(
+                                      backgroundColor: Colors.teal,
+                                      child: Text("J"),
                                     ),
-                                    onRatingUpdate: (rating) {
-                                      print(rating);
-                                    },
-                                  ),
-                                  SizedBox(
-                                    width: 8.0,
-                                  ),
-                                  Text("27-fevral 2025",style: TextStyle(color: Colors.grey),),
-                                ],
-                              ),
-                              Text("Chiroyli zamonaviy klinika. Men operatsiyani "
+                                    SizedBox(
+                                      width: 8.0,
+                                    ),
+                                    Text(
+                                      "Aktubayev Alisher",
+                                      style: TextStyle(
+                                          color: Colors.black87,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    RatingBar.builder(
+                                      unratedColor: Colors.grey[400],
+                                      initialRating: 0,
+                                      minRating: 0,
+                                      itemSize: 15.0,
+                                      direction: Axis.horizontal,
+                                      itemCount: 5,
+                                      itemPadding:
+                                          EdgeInsets.symmetric(horizontal: 1.0),
+                                      itemBuilder: (context, _) => Icon(
+                                        Icons.star_rate,
+                                        color: Colors.teal,
+                                      ),
+                                      onRatingUpdate: (rating) {
+                                        print(rating);
+                                      },
+                                    ),
+                                    SizedBox(
+                                      width: 8.0,
+                                    ),
+                                    Text(
+                                      "27-fevral 2025",
+                                      style: TextStyle(color: Colors.grey),
+                                    ),
+                                  ],
+                                ),
+                                Text(
+                                  "Chiroyli zamonaviy klinika. Men operatsiyani "
                                   "o‘tkazdim va keyin bir necha kun o‘sha erda qoldim. "
-                                  "Yoqimli va sezgir tibbiyot xodimlari, sabrlari ",style: TextStyle(color: Colors.black87),),
+                                  "Yoqimli va sezgir tibbiyot xodimlari, sabrlari ",
+                                  style: TextStyle(color: Colors.black87),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      );
+                    }),
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Divider(
+                height: 1,
+                thickness: 2,
+                color: Colors.grey[300],
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Text(
+                "O'xshash shifokorlar",
+                style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.w500),
+              ),
+              Container(
+                height: 150.0,
+                child: ListView.builder(
+                  itemCount: 2,
+                  itemBuilder: (BuildContext context, index) {
+                    return Column(
+                      children: [
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 10.0),
+                              child: CircleAvatar(
+                                  child: CircleAvatar(
+                                    backgroundImage:
+                                    AssetImage("images/tiger.jpg"),
+                                    radius: 40.0,
+                                  ),
+                                  maxRadius: 42.0,
+                                  backgroundColor: Colors.teal,
+                                ),
+                            ),
+
+                            Column(
+                              children: [
+                                Padding(
+                                  padding:
+                                  const EdgeInsets.symmetric(
+                                      vertical: 6.0,
+                                      horizontal: 1.0),
+                                  child: Row(
+                                    children: [
+                                      SizedBox(
+                                        width: 10.0,
+                                      ),
+                                      Text(
+                                        "Aktubayev Alisher",
+                                        style: TextStyle(
+                                            color: Colors.black87,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 18.0),
+                                      ),
+                                      SizedBox(
+                                        width: 50.0,
+                                      ),
+                                      Icon(Icons.favorite_border_outlined,color: Colors.black87,)
+                                    ],
+                                  ),
+                                ),
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                      width: 8.0,
+                                    ),
+                                    Icon(
+                                      Icons.star_outlined,
+                                      color: Colors.red[500],
+                                    ),
+                                    Text(
+                                      "4.95",
+                                      style: TextStyle(
+                                          color: Colors.red[300]),
+                                    ),
+                                    SizedBox(
+                                      width: 10.0,
+                                    ),
+                                    Text(
+                                      "152 izohlar",
+                                      style: TextStyle(
+                                          color: Colors.grey[500]),
+                                    ),
+                                    SizedBox(
+                                      width: 50.0,
+                                    ),
+                                    Text(
+                                      "4.95 km",
+                                      style: TextStyle(
+                                          color: Colors.grey[500]),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                              mainAxisAlignment:
+                              MainAxisAlignment.start,
+                              crossAxisAlignment:
+                              CrossAxisAlignment.start,
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: 5.0,
+                            ),
+                            Icon(
+                              Icons.card_travel_sharp,
+                              color: Colors.black87,
+                            ),
+                            SizedBox(
+                              width: 8.0,
+                            ),
+                            Text(
+                              "Stomatolog-Jarrox",
+                              style: TextStyle(color: Colors.grey),
+                            ),
+                            SizedBox(
+                              width: 8.0,
+                            ),
+                            SizedBox(
+                              width: 15.0,
+                            ),
+                            const Text(
+                              "16 yillik tajriba",
+                              style: TextStyle(color: Colors.grey),
+                            ),
+                            SizedBox(
+                              width: 8.0,
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 6.0,
+                        ),
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: 5.0,
+                            ),
+                            Icon(
+                              Icons.location_on_outlined,
+                              color: Colors.black87,
+                            ),
+                            SizedBox(
+                              width: 8.0,
+                            ),
+                            Text(
+                              "AkfaMedline",
+                              style: TextStyle(
+                                  color: Colors.black87,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 6.0,
+                        ),
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: 5.0,
+                            ),
+                            Icon(
+                              Icons.calendar_month_outlined,
+                              color: Colors.black87,
+                            ),
+                            SizedBox(
+                              width: 8.0,
+                            ),
+                            Text(
+                              "Du,Chor,Pay,Juma ",
+                              style: TextStyle(
+                                  color: Colors.black87,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                            SizedBox(
+                              width: 8.0,
+                            ),
+                            Text(
+                              "9:00 - 17:00",
+                              style: TextStyle(
+                                  color: Colors.black87,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 8.0,
+                        ),
+                        Container(
+                          child: Wrap(
+                            spacing: 8.0,
+                            runSpacing: 5.0,
+                            direction: Axis.horizontal,
+                            children: [
+                              Card(
+                                child: Padding(
+                                  padding:
+                                  const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    "Stomatolog-Terapevt",
+                                    style: TextStyle(
+                                        color: Colors.black87),
+                                  ),
+                                ),
+                                color: Colors.grey[300],
+                              ),
+                              Card(
+                                child: Padding(
+                                  padding:
+                                  const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    "Stomatolog-Jarrox",
+                                    style: TextStyle(
+                                        color: Colors.black87),
+                                  ),
+                                ),
+                                color: Colors.grey[300],
+                              ),
+                              Card(
+                                child: Padding(
+                                  padding:
+                                  const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    "Bolalar-Stomatolog",
+                                    style: TextStyle(
+                                        color: Colors.black87),
+                                  ),
+                                ),
+                                color: Colors.grey[300],
+                              ),
                             ],
                           ),
                         ),
-                      ),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                        Divider(
+                          indent: 20.0,
+                          endIndent: 20.0,
+                          color: Colors.grey[300],
+                        ),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                         Row(
+                            children: [
+                              Text(
+                                "Birinchi konsultatsiya ............",
+                                style: TextStyle(
+                                    color: Colors.grey[500],
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                "550 000so'm",
+                                style: TextStyle(
+                                    color: Colors.black87,
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ],
+                          ),
+
+                        Row(
+                            children: [
+                              Text(
+                                "Takroriy konsultatsiya ......",
+                                style: TextStyle(
+                                    color: Colors.grey[500],
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                "Kelishuv asosida",
+                                style: TextStyle(
+                                    color: Colors.black87,
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ],
+                          ),
+
+                        Row(
+                          children: [
+                            GestureDetector(
+                              child:  Text(
+                                  "Batafsil",
+                                  style: TextStyle(
+                                    color: Colors.teal,
+                                    fontSize: 17.0,
+                                    fontWeight: FontWeight.w500,
+                                    decoration:
+                                    TextDecoration.underline,
+                                    decorationColor: Colors.teal,
+                                    decorationThickness: 2,
+                                  ),
+                                ),
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        InfoDoctor(),
+                                  ),
+                                );
+                              },
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 20.0),
+                              child: ElevatedButton.icon(
+                                onPressed: () {},
+                                label: Text(
+                                  "Navigator",
+                                  style:
+                                  TextStyle(color: Colors.teal),
+                                ),
+                                icon: Icon(
+                                  Icons.near_me_rounded,
+                                  color: Colors.teal,
+                                ),
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.grey[100],
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    BorderRadius.circular(15.0),
+                                    side: BorderSide(
+                                      width: 1,
+                                      color: Colors.teal,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                          mainAxisAlignment:
+                          MainAxisAlignment.spaceBetween,
+                        ),
+                      ],
                     );
-                  }
+                  },
                 ),
-              ),
-              SizedBox(
-                height: 20.0,
               ),
             ],
           ),
